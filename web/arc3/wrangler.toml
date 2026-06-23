@@ -1,0 +1,8 @@
+name = "arc3-platform-agent"
+main = "worker.js"
+compatibility_date = "2026-06-22"
+workers_dev = true
+
+routes = [
+  { pattern = "arc3.wordm.us/*", zone_name = "wordm.us" }
+]
