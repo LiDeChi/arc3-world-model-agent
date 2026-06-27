@@ -1,6 +1,6 @@
-# CLAUDE.md
+# AGENTS.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides guidance to Codex (Codex.ai/code) when working with code in this repository.
 
 ## Project overview
 
@@ -71,6 +71,12 @@ Run the self-tuning PBT platform:
 
 ```bash
 python -m arcagent.platform.pbt --generations 2 --population 4 --steps-per-generation 300 --run-dir runs/pbt
+```
+
+Run the fixed-seed smoke benchmark:
+
+```bash
+python -m arcagent.eval.benchmark --run-dir runs/benchmark
 ```
 
 Run the autonomous LLM platform agent with local DeepSeek (training-time only):
