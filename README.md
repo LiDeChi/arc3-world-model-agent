@@ -17,12 +17,13 @@ python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -e .
 python -m arcagent.train.run --steps 300 --run-dir runs/smoke
+python -m arcagent.viz.monitor runs/smoke
 python -m arcagent.viz.report runs/smoke
 python -m submission.offline_check
 python -m unittest discover -s tests
 ```
 
-The report is written to `runs/smoke/report.html`. Training logs are JSONL files under the run directory.
+The live monitor opens at `http://127.0.0.1:8765` and refreshes while training writes JSONL logs. The static report is written to `runs/smoke/report.html`.
 
 ## Learn the Project Interactively (Recommended)
 
@@ -56,6 +57,9 @@ python -m arcagent.eval.benchmark --run-dir runs/benchmark
 
 # Generate visual report from any run directory.
 python -m arcagent.viz.report runs/pbt
+
+# Watch a run while it is training.
+python -m arcagent.viz.monitor runs/pbt --port 8765
 
 # Exercise the submission shim locally.
 python -m submission.run --episodes 2
